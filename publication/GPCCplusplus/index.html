@@ -1,0 +1,435 @@
+
+<style type="text/css">
+	body {
+		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+		font-weight:300;
+		font-size:18px;
+		margin-left: auto;
+		margin-right: auto;
+		width: 1100px;
+	}
+	h1 {
+		font-weight:300;
+	}
+
+	.disclaimerbox {
+		background-color: #eee;
+		border: 1px solid #eeeeee;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+		padding: 20px;
+	}
+
+	video.header-vid {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+
+	img.header-img {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+
+	img.rounded {
+		border: 0px solid #eeeeee;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+
+	a:link,a:visited
+	{
+		color: #1367a7;
+		text-decoration: none;
+	}
+	a:hover {
+		color: #208799;
+	}
+
+	td.dl-link {
+		height: 160px;
+		text-align: center;
+		font-size: 22px;
+	}
+
+	.layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		        0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+		        5px 5px 0 0px #fff, /* The second layer */
+		        5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+		        10px 10px 0 0px #fff, /* The third layer */
+		        10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+		        15px 15px 0 0px #fff, /* The fourth layer */
+		        15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+		        20px 20px 0 0px #fff, /* The fifth layer */
+		        20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+		        25px 25px 0 0px #fff, /* The fifth layer */
+		        25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+
+	.paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		        0px 0px 1px 1px rgba(0,0,0,0.35); /* The top layer shadow */
+
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+
+	.layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		        0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+		        5px 5px 0 0px #fff, /* The second layer */
+		        5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+		        10px 10px 0 0px #fff, /* The third layer */
+		        10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+		margin-top: 5px;
+		margin-left: 10px;
+		margin-right: 30px;
+		margin-bottom: 5px;
+	}
+
+	.vert-cent {
+		position: relative;
+	    top: 50%;
+	    transform: translateY(-50%);
+	}
+
+	hr
+	{
+		border: 0;
+		height: 1px;
+		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+	}
+</style> 
+		<title>GPCC++: Enhanced Geometry-based Point Cloud Compression</title>
+  </head>
+
+  <body data-gr-c-s-loaded="true" data-new-gr-c-s-check-loaded="14.1049.0" data-gr-ext-installed="">
+    <br>
+          <center>
+          	<span style="font-size:34px">GPCC++: Enhanced Geometry-based Point Cloud Compression</span><br>
+	  		  
+	  		  <br>
+
+	  		  <table align="center" width="900px">
+	  			  <tbody><tr>
+	  	              <td align="center" width="250px">
+	  					<center>
+	  						<span style="font-size:22px"><a target="_blank">Junzhe Zhang</a><sup>1</sup></span>
+		  		  		</center>
+		  		  	  </td>
+	  	              <td align="center" width="150px">
+	  					<center>
+	  						<span style="font-size:22px"><a href="https://vision.nju.edu.cn/fc/d8/c29471a457944/page.htm" target="_blank">Chen Tong</a><sup>2</sup></span>
+		  		  		</center>
+		  		  	  </td>
+	  	              <td align="center" width="300px">
+	  					<center>
+	  						<span style="font-size:22px"><a href="https://hise.hznu.edu.cn/c/2019-07-08/2192325.shtml" target="_blank">Dandan Ding</a><sup>1</sup></span>
+		  		  		</center>
+		  		  	  </td>
+	  	              <td align="center" width="100px">
+	  					<center>
+	  						<span style="font-size:22px"><a href="https://vision.nju.edu.cn/fc/d3/c29470a457939/page.htm" target="_blank">Zhan Ma</a><sup>2</sup></span>
+		  		  		</center>
+		  		  	  </td>
+	  			  </tr>
+			  </tbody></table>
+	  		  
+			  <table align="center" width="800px"><tbody>
+			  <tr>
+	  	              <td align="center" width="50px"></td>
+	  	              <td align="center" width="200px">
+	  					<center>
+				          	<span style="font-size:18px"><sup>1</sup>Hangzhou Normal University</span>
+		  		  		</center>
+		  	      </td>
+	  	              <td align="center" width="150px">
+	  					<center>
+				          	<span style="font-size:18px"><sup>2</sup>Nanjing University</span>
+		  		  		</center>
+		  	      </td>
+	  	              <td align="center" width="50px"></td>
+			  </tr>
+			  </tbody></table>
+			  
+
+			  <br>
+
+	  		  <table align="center" width="1100px">
+	  			  <tbody><tr>
+	  	              <td align="center" width="275px">
+	  					<center>
+				          	<span style="font-size:18px"></span>
+		  		  		</center>
+		  		  	  </td>
+	  	              <td align="center" width="225px">
+	  					<center>
+	  						<span style="font-size:22px">Code <a href="https://github.com/3dpcc/GPCCplus" target="_blank"> [GitHub]</a></span>
+		  		  		</center>
+		  		  	  </td>
+	  	              <td align="center" width="225px">
+	  					<center>
+							  <span style="font-size:22px">Unpublished<a href="" target="_blank"> [Paper]</a></span>
+							  
+		  		  		</center>
+		  		  	  </td>
+	  	              <td align="center" width="275px">
+	  					<center>
+				          	<span style="font-size:18px"></span>
+		  		  		</center>
+		  		  	  </td>
+			  </tr></tbody></table>
+          </center>
+<!--
+          <br>
+  		  <table align="center" width="1100px">
+  			  <tbody><tr>
+  	              <td width="400px">
+  					<center>
+  	                	<img class="rounded" src="./Figures/Meshes.png" width="1100px">
+  	                	<br>
+					</center>
+  	              </td>
+  	              </tr>
+  	              </tbody></table>
+
+  		  <br>
+	  -->
+		  <hr>
+
+  		  <center><h1>Abstract</h1></center>
+			MPEG Geometry-based Point Cloud Compression (G-PCC) standard is developed for lossy encoding of point clouds to enable immersive services over the Internet. 
+			However, lossy G-PCC  introduces superimposed distortions from both geometry and attribute information, seriously deteriorating the Quality of Experience (QoE). This paper thus proposes the Enhanced G-PCC (G-PCC++), to effectively address the compression distortion and restore the quality. G-PCC++ separates the enhancement into two stages: it first enhances the geometry and then maps the decoded attribute to the enhanced geometry for refinement. As for geometry restoration, a Nearest Neighbors (𝑘NN)-based Linear Interpolation is first used to generate a denser geometry representation,  on top of which the GeoNet further generates sufficient candidates to restore geometry through probability-sorted selection. For attribute enhancement, a 𝑘NN-based Gaussian Distance Weighted Mapping is devised to re-colorize all points in enhanced geometry tensor, which are then refined by the AttNet for the final reconstruction. G-PCC++ is the first solution addressing the geometry and attribute artifacts together. Extensive experiments on several public datasets demonstrate the superiority of G-PCC++, e.g., on the solid point cloud dataset 8iVFB,  G-PCC++ outperforms G-PCC  by 88.24% (80.54%) BD-BR in D1 (D2) measurement of geometry and by 14.64% (13.09%) BD-BR in Y (YUV) attribute information. Moreover, when considering both geometry and attribute, G-PCC++ also largely surpasses the G-PCC by 25.58% BD-BR using PCQM assessment.
+		<br><br><hr>
+
+		<center><h1>Overview</h1></center>
+  		    <table align="center" width="1100px">
+  			<tbody>
+  			  	<tr>
+  			  		<td align="center"><img class="round" style="width:1100px" src="./Figures/visual_longdress.png"></td>	
+			  	</tr>
+			  	<!-- <tr>
+			  		<td align="center"><h3>Pipeline of EC-Net</h3></td>
+			  	</tr> -->
+			</tbody>
+			</table>
+			
+			<br>
+
+			<!-- <table align="center" width="900px">
+  			<tbody>
+  			  	<tr>
+  			  		<td align="center"><img class="round" style="width:700px" src="./figures/up&down.png"></td>	
+			  	</tr>
+			  	<tr>
+			  		<td align="center"><h3>Patches Extraction</h3></td>
+			  	</tr>
+
+			</tbody>
+			</table> -->
+		  <br>
+
+  		  <!-- <center>
+				<span style="font-size:28px"><a href="https://github.com/liruihui/PU-GAN">[GitHub]</a>
+			  <br>
+			  </span></center>
+		  <br> -->
+
+<!--
+	  
+		  <hr>
+
+  		  <center><h1>Paper and Supplementary Material</h1></center>
+  		  <table align="center" width="500" px="">
+	 		
+  			  <tbody><tr>
+				  <td><a href="https://liruihui.github.io/publication/PU-GAN/"><img class="layered-paper-big" style="height:175px" src="./PU-GAN_ a Point Cloud Upsampling Adversarial Network_files/paper.png"></a></td>
+				  <td><span style="font-size:12pt">Ruihui Li, Xianzhi Li, Chi-Wing Fu, <br>Daniel Cohen-Or, Pheng-Ann Heng.</span><br>
+				  <b><span style="font-size:12pt">PU-GAN: a Point Cloud Upsampling Adversarial Network.</span></b><br>
+				  <span style="font-size:12pt">In ICCV, 2019. 
+				  <br>
+				  <a href="https://arxiv.org/abs/1907.10844" target="_blank">[arxiv]</a> 
+				  <a href="https://drive.google.com/file/d/1CgOCgA62fmaVLBqK4SyEYa5LYoiZxtnN/view?usp=sharing" target="_blank">[paper]</a> 
+				  <a href="https://drive.google.com/file/d/1e-pzQ4UFzeM54FWuwsfDcLGXuiyPuB9S/view?usp=sharing" target="_blank">[supp]</a>
+
+				  </span></td>
+  	              
+              </tr>
+  		  </tbody></table>
+		  <br><br>
+-->
+		  <hr>
+
+		<center><h1>G-PCC++: Using Local Neighbors For Quality Enhancement<br></h1></center>
+		G-PCC++ separately enhances the quality of G-PCC compressed geometry and attribute. It first restores the geometry
+and upon restored geometry representation, attribute restoration is fulfilled. The use of localized computation, e.g., sparse
+convolutions (SConv), 𝑘NN-based Linear Interpolation, and 𝑘NN-based Gaussian Distance Weighted Mapping, makes G-PCC++
+very lightweight and attractive in practice. 𝑑 denotes the number of input channels in InceptionResNet (IRN).
+  		<br><br>
+  		<table align="center" width="1100px">
+			  <tbody><tr>
+				  <td><center>
+				  	<img class="paper-big" style="width:1100px" src="./Figures/framework.png">
+  	              </center></td>
+              </tr>
+			  
+  		</tbody></table> 
+  		
+  		<!-- <center>
+  			<br>
+  			<span style="font-size:28px"><a href="./moreresult.html">[More results]</a>
+			<br>
+			</span>
+		</center> -->
+
+		<br>
+		<br>
+		
+		<hr>
+ 		<center><h1>Experiment Results<br></h1></center>
+
+
+  		<br><br>
+  		<table align="center" width="800px">
+			All results confirm the
+			superiority of the proposed G-PCC++. R-D curves plotted in figure
+			consistently evidence the leading performance of G-PCC++ across
+			a variety of bitrates.
+			  <tbody><tr>
+				  <td><span style="font-size:24pt"><center>
+				  	<img class="paper-big" style="width:900px" src="./Figures/results2.png">
+  	              </center></span></td>
+			  </tr>
+			  <tr>
+			  	<td align="center">Rate-Distortion (R-D) comparison between G-PCC
+					(TMC13v19) and G-PCC++ (Ours) when compressing geometry, attribute, and their superimposition.</i>.</td>
+			  </tr>
+  		</tbody></table> 
+  		<br>
+  		<table align="center" width="600px">
+			  <tbody><tr>
+				  <td><span style="font-size:24pt"><center>
+				  	<img class="paper-big" style="width:900px" src="./Figures/results1.png">
+  	              </center></span></td>
+			  </tr>
+			  <tr>
+				<td align="center">More Rate-Distortion comparison between G-PCC using PCQM quality assessment.</i></td>
+			  </tr>
+  		</tbody></table> 
+  		
+  		<br>
+		  
+		<hr>
+
+		<center><h1>More Quality Comparison<br></h1></center>
+		In addition, we visualize reconstructed point clouds. 
+		The reconstructions of G-PCC compressed point clouds contain visually-annoying black holes and blocking artifacts, particularly at low bitrates, which are introduced by the point vanishing in geometry compression and quantization error accumulation in attribute compression. 
+		Overall, G-PCC reconstructions lack spatial details with blurry and blocky appearances across a variety of content. 
+		By contrast,  G-PCC++ effectively addresses these issues by filling the holes and removing the artifacts, resulting in visually clear and aesthetically pleasant reconstructions that are close to the ground truth.
+  		<br><br>
+  		<table align="center" width="600px">
+			  <tbody><tr>
+				  <td><span style="font-size:24pt"><center>
+				  	<img class="paper-big" style="width:1000px" src="./Figures/more_quality.png">
+  	              </center></span></td>
+              </tr>
+			  <tr>
+				<td align="center">Visualization of G-PCC and G-PCC++ reconstructions. For fair comparisons, we show different point clouds compressed
+					at a wide range of bitrates.</td>
+			  </tr>
+  		</tbody></table> 
+
+  		<br>
+		  <br>
+	  
+	  
+	  <hr>
+
+
+		<hr>		
+  		  <table align="center" width="1100px">
+  			<tbody>
+			<tr><td width="400px"><left>
+			  <center><h1>Citation</h1></center>
+			  Paper accepted in ACM MultiMedia 2023. Citation available soon.
+				<br>
+			  If GPCC++ is useful for your research, please consider citing.
+
+<!--		
+				
+			<p style="text-align:left;">
+				<span>@inproceedings{pudense,</span><br>
+				<span>  title&nbsp;=&nbsp;{<span id="__kindeditor_bookmark_start_4__"></span>{PU-Dense}: Sparse Tensor-based Point Cloud Geometry Upsampling<span id="__kindeditor_bookmark_end_5__"></span>},</span><br>
+				<span>  author&nbsp;=&nbsp;{Akhtar, Anique and Li, Zhu and Van der Auwera, Geert and Li, Li and Chen, Jianle},</span><br>
+				<span>  booktitle&nbsp;=&nbsp;{{IEEE} Transactions on Image Processing.},</span><br>
+				<span>  year&nbsp;=&nbsp;{2022},</span><br>
+				<span>}&nbsp;</span> 
+			</p>
+			</left></td></tr>
+			</tbody></table>
+		<br>
+		<br>
+
+	  
+		<hr>
+  		  <table align="center" width="1100px">
+  			<tbody>
+			<tr><td width="400px"><left>
+	  		<center><h1>Acknowledgments</h1></center>
+		          We thank anonymous reviewers for the valuable comments.
+			We also thank <a href="https://wbstx.github.io/about/" target="_blank"> xiao tang</a>
+			 for collecting the dataset and hao xu
+                         for rendering the vivid figures. 
+			 The work is supported by the 973 Program (Proj. No. 2015CB351706), the National Natural Science Foundation of China with Proj. No. U1613219, the
+			  Research Grants Council of the Hong Kong Special Administrative Region (No. CUHK 14203416 &amp; 14201717), and
+			  the Israel Science Foundation grants 2366/16 and 2472/7.
+			</left></td></tr>
+			</tbody></table>
+		<br>
+		<br>
+	
+	  
+
+-->
+	  
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+	  
+<!-- Default Statcounter code for PU-Dense
+https://aniqueakhtar.github.io/publications/PU-Dense/ -->
+<script type="text/javascript">
+var sc_project=12724534; 
+var sc_invisible=1; 
+var sc_security="c4165498"; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="Web Analytics
+Made Easy - Statcounter" href="https://statcounter.com/"
+target="_blank"><img class="statcounter"
+src="https://c.statcounter.com/12724534/0/c4165498/1/"
+alt="Web Analytics Made Easy - Statcounter"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+<!-- End of Statcounter Code -->
