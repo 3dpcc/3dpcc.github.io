@@ -1,0 +1,421 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+    <title>Editorial by HTML5 UP</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="assets/css/main.css"/>
+</head>
+<body class="is-preload">
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Main -->
+    <div id="main">
+        <div class="inner">
+            <!-- Banner -->
+            <section id="banner">
+                <div class="content">
+                    <header>
+                        <center><h1 style="font-size:50px">YOGAv2: A Layered Point Cloud Compressor</h1></center>
+                    </header>
+                    <!--										<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien ac quam. Lorem ipsum dolor sit nullam.</p>-->
+                    <!--										<ul class="actions">-->
+                    <!--											<li><a href="#" class="button big">Learn More</a></li>-->
+                    <!--										</ul>-->
+                </div>
+
+
+                <!--									<span class="image object">-->
+                <!--										<img src="images/pic10.jpg" alt="" />-->
+                <!--									</span>-->
+            </section>
+            <table align="center" width="1200px">
+                <tbody style="border: solid 0; background-color: #ffffff">
+                <tr style="border: solid 0; background-color: #ffffff">
+                    <td align="center" width="300px">
+                        <center>
+                    <span style="font-size:18px"><a href="https://github.com/arsx958"
+                                                    target="_blank">Junteng Zhang</a><sup>1</sup></span>
+                        </center>
+                    </td>
+                    <td align="center" width="300px">
+                        <center>
+                    <span style="font-size:18px"><a href="https://vision.nju.edu.cn/84/d8/c29470a492760/page.htm"
+                                                    target="_blank">Hao Chen</a><sup>2</sup></span>
+                        </center>
+                    </td>
+                    <td align="center" width="300px">
+                        <center>
+                            <span style="font-size:18px">Junzhe Zhang</a><sup>1</sup></span>
+                        </center>
+                    </td>
+                    <td align="center" width="300px">
+                        <center>
+                            <span style="font-size:18px"><a href="https://sites.google.com/site/jiangbolu/"
+                                                            target="_blank">Jiangbo Lu</a><sup>3</sup></span>
+                        </center>
+                    </td>
+                    <td align="center" width="300px">
+                        <center>
+                    <span style="font-size:18px"><a href="https://hise.hznu.edu.cn/c/2019-07-08/2192325.shtml"
+                                                    target="_blank">Dandan Ding</a><sup>1</sup></span>
+                        </center>
+                    </td>
+                    <td align="center" width="300px">
+                        <center>
+                    <span style="font-size:18px"><a href="https://vision.nju.edu.cn/fc/d3/c29470a457939/page.htm"
+                                                    target="_blank">Zhan Ma</a><sup>2</sup></span>
+                        </center>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <table align="center" width="800px">
+                <tbody style="border: solid 0; background-color: #ffffff">
+                <tr style="border: solid 0; background-color: #ffffff">
+                    <td align="center" width="50px"></td>
+                    <td align="center" width="200px">
+                        <center>
+                            <span style="font-size:18px"><sup>1</sup>Hangzhou Normal University</span>
+                        </center>
+                    </td>
+                    <td align="center" width="150px">
+                        <center>
+                            <span style="font-size:18px"><sup>2</sup>Nanjing University</span>
+                        </center>
+                    <td align="center" width="150px">
+                        <center>
+                            <span style="font-size:18px"><sup>3</sup>SmartMore</span>
+                        </center>
+                    </td>
+                    <td align="center" width="50px"></td>
+                </tr>
+                </tbody>
+            </table>
+            <table align="center" width="1100px">
+                <tbody style="border: solid 0; background-color: #ffffff">
+                <tr style="border: solid 0; background-color: #ffffff">
+                    <td align="center" width="275px">
+                        <center>
+                            <span style="font-size:18px"></span>
+                        </center>
+                    </td>
+                    <td align="center" width="225px">
+                        <center>
+                            <span style="font-size:18px">Code <a href="https://github.com/3dpcc/YOGAv2" target="_blank"> [GitHub]</a></span>
+                        </center>
+                    </td>
+                    <td align="center" width="225px">
+                        <center>
+                            <span style="font-size:18px">Unpublished<a href="" target="_blank"> [Paper]</a></span>
+
+                        </center>
+                    </td>
+                    <td align="center" width="275px">
+                        <center>
+                            <span style="font-size:18px"></span>
+                        </center>
+                    </td>
+                </tr>
+                <!--                </tbody>-->
+            </table>
+
+            <!-- Section -->
+            <section id="Abstract">
+                <header class="major">
+                    <h2>Abstract</h2>
+                </header>
+                <div class="features">
+                    <article style="width: 100%">
+                        <div class="content">
+                            <p style="color: #3d4449; font-size: 20px">A layered point cloud compressor, YOGAv2, is
+                                proposed to efficiently encode colorful and relatively dense object point
+                                clouds vastly used in Augmented/Virtual Reality (AR/VR) applications. It is flexible,
+                                capable of compressing geometry
+                                and attribute information, separately and jointly, in pursuit of optimal quality under
+                                any given bitrate budget; it is
+                                high-efficiency, significantly outperforming the latest G-PCC standard quantitatively
+                                and qualitatively, e.g., more than
+                                30% BD-BR gains using PCQM (Point Cloud Quality Metric) to assess superimposed geometry
+                                and attribute artifacts; and it
+                                is lightweight, e.g., presenting similar runtime as the G-PCC codec and just desiring a
+                                single neural model for encoding
+                                each component, which owes to parallel entropy coding and variable-rate support. T o
+                                this end, YOGAv2 develops a unified
+                                compression backbone for separate geometry and attribute compression. The backbone uses
+                                a two-layer structure, where the
+                                downscaled thumbnail point cloud is encoded using G-PCC at the base layer. Upon G-PCC
+                                compressed priors, sparse
+                                convolutions are stacked in a multiscale manner under an end-to-end variational
+                                autoencoder (VAE) framework at the
+                                enhancement layer to compactly represent the full-resolution sample.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Section -->
+            <section id="Overview">
+                <header class="major">
+                    <h2>Overview</h2>
+                </header>
+                <div class="posts">
+                    <article>
+                        <a class="image"><img src="images/YOGA2-overview.png" alt=""/></a>
+                        <h3>A Layered Point Cloud Compressor</h3>
+                        <p style="color: #3d4449">Separate geometry and attribute coder with accurate rate control,
+                            where lossy attribute
+                            compression is conditioned on reconstructed geometry through nearest-neighbor mapping
+                            (M).</p>
+                    </article>
+                    <article>
+                        <a class="image"><img src="images/YOGAv2-RateControl.png" alt=""/></a>
+                        <h3>Two-pass Rate Control </h3>
+                        <p style="color: #3d4449">Two-pass rate control where pre-encoding is applied to determine
+                            parameters of R-D models for
+                            deriving λG or λA under any given bandwidth budget RT in compression.</p>
+                    </article>
+                    <article>
+                        <a class="image" style="width: auto; max-width: 100%; max-height: 100%;"><img
+                                src="images/YOGA2-UnifiedCompressionBackbone.png" alt=""/></a>
+                        <h3>Unified Compression Backbone</h3>
+                        <p style="color: #3d4449">A two-layer unified compression backbone used in respective geometry
+                            and attribute coders.
+                            The base layer uses G-PCC to encode the (downscaled) thumbnail point cloud. Upon the base
+                            layer reconstruction, the enhancement layer applies an end-toend V AE to embed local
+                            neighbors in a multiscale manner.</p>
+                    </article>
+                    <article>
+                        <h3>Contribution</h3>
+                        <p style="color: #3d4449">High Flexibility. YOGAv2 is flexible, enabling the lossy compression
+                            of geometry , attribute,
+                            and their combination at any given bitrate and facilitating network-friendly scalable
+                            streaming through a layered design. At the same, YOGAv2 offers backward compatibility to
+                            enjoy well-engineered techniques in standard-compliant G-PCC.</p>
+                        <p style="color: #3d4449">High-Efficiency. YOGAv2 significantly improves the compression
+                            efficiency compared with G-PCC
+                            and even outperforms V-PCC.
+                            <br>
+                            1) Quantitatively , when both geometry and attribute are lossily encoded, YOGAv2 outperforms
+                            G-PCC by more than 80% BD-BR (Bjøntegaard Delta Rate) for geometry coding only , around 10%
+                            BD-BR for attribute coding only , and more than 30% when compressing geometry and attribute
+                            together.
+                            <br>
+                            2) With dedicated subjective user studies from two independent parties, YOGAv2 consistently
+                            delivers superior qualitative quality compared to V-PCC, providing closer reconstruction to
+                            the ground truth.
+                        </p>
+                        <p style="color: #3d4449">Low Complexity. YOGAv2 presents a comparable runtime to the G-PCC,
+                            owing to the use of sparse
+                            convolution and parallel entropy coding. And using the variable-rate model in YOGAv2 makes
+                            it practically affordable concerning space complexity.</p>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- Section -->
+            <section id="Compression Backbone">
+                <header class="major">
+                    <h2>Compression Backbone</h2>
+                </header>
+                <div class="features">
+                    <article style="width: 100%">
+                        <div class="content">
+                            <p style="color: #3d4449; font-size: 20px">Framework of the unified compression backbone in
+                                YOGAv2 for separate geometry and attribute coding.</p>
+                            <span class="image main"><img src="images/UCB_Details.png" alt=""/></span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+
+            <!-- Section -->
+            <section id="Rate Control Strategy">
+                <header class="major">
+                    <h2>Rate Control Strategy</h2>
+                </header>
+                <p style="color:#3d4449;">Given a total bandwidth budget R<SUB>T</SUB>, YOGAv2 adopts a content-aware
+                    two-pass rate control to determine
+                    the respective bitrate portion of geometry (R<SUB>G</SUB>) and attribute (R<SUB>A</SUB>) of a point
+                    cloud for the
+                    maximization of overall compression performance measured using rate-distortion (R-D) metrics. The
+                    widely recognized PCQM metric is applied to assess the superimposed distortion from compressed
+                    geometry and attribute information. At the same time, we formulate analytical rate and distortion
+                    models for geometry and attribute components as functions of their corresponding controlling
+                    factors, i.e., λ<SUB>G</SUB> and λ<SUB>A</SUB>, and apply a pre-encoding step to perform the
+                    content-aware analysis for
+                    determining model parameters, which enables accurate and effective rate control subsequently.</p>
+                <div class="posts">
+                    <article>
+                        <center><h3>D<SUB>G</SUB> vs. λ<SUB>G</SUB></h3></center>
+                        <a class="image"><img src="images/loot_power_00.png" alt=""/></a>
+                    </article>
+                    <article>
+                        <center><h3>R<SUB>G</SUB> vs. λ<SUB>G</SUB></h3></center>
+                        <a class="image"><img src="images/loot_polynomial_00.png" alt=""/></a>
+                    </article>
+                    <article>
+                        <center><h3>D<SUB>A</SUB> vs. λ<SUB>G</SUB></h3></center>
+                        <a class="image"><img src="images/loot_D_a_lambda_g_00.png" alt=""/></a>
+                    </article>
+                    <article>
+                        <center><h3>R<SUB>A</SUB> vs. λ<SUB>G</SUB></h3></center>
+                        <a class="image"><img src="images/loot_R_a_lambda_g_00.png" alt=""/></a>
+                    </article>
+                    <article>
+                        <center><h3>D<SUB>A</SUB> vs. λ<SUB>A</SUB></h3></center>
+                        <a class="image"><img src="images/loot_a_power_00.png" alt=""/></a>
+                    </article>
+                    <article>
+                        <center><h3>R<SUB>A</SUB> vs. λ<SUB>A</SUB></h3></center>
+                        <a class="image"><img src="images/loot_a_polynomial_00.png" alt=""/></a>
+                    </article>
+                    <article style="width: 100%">
+                        <div class="content">
+                            <p style="color: #3d4449; font-size: 20px">Combining rate and distortion models developed in
+                                previous sections, bit allocation is extended to:</p>
+                            <center><span class="image main" style="width: 70%"><img src="images/rate control.png"
+                                                                                     alt=""/></span></center>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Section -->
+            <section id="Rate Control Efficacy">
+                <header class="major">
+                    <h2>Rate Control Efficacy</h2>
+                </header>
+                <div class="features">
+                    <article style="width: 100%">
+                        <div class="content">
+                            <p style="color: #3d4449; font-size: 20px">We compare brute-force Full Search Mode
+                                and the proposed Analytical Prediction Mode to quantify the efficacy of rate
+                                control in YOGAv2:</p>
+                            <center><span class="image main" style="width: 70%"><img src="images/Rate Contronl.png"
+                                                                                     alt=""/></span></center>
+                            <center><span class="image main" style="width: 70%"><img src="images/Rate Control RD.png"
+                                                                                     alt=""/></span></center>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Section -->
+            <section id="Compression Performance">
+                <header class="major">
+                    <h2>Compression Performance</h2>
+                </header>
+                <div class="features">
+                    <article style="width: 100%">
+                        <div class="content">
+                            <p style="color: #3d4449; font-size: 20px">We evaluate YOGAv2's performance of overall
+                                compression:</p>
+                            <center><span class="image main" style="width: 100%"><img src="images/cp.png"
+                                                                                      alt=""/></span></center>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Section -->
+            <section id="Qualitative Evaluation">
+                <header class="major">
+                    <h2>Qualitative Evaluation</h2>
+                </header>
+                <div class="features">
+                    <article style="width: 100%">
+                        <div class="content">
+                            <p style="color: #3d4449; font-size: 20px">We provide visual comparisons of the
+                                reconstructed point clouds from G-PCC, V-PCC, PCGCv2+SparsePCAC and YOGAv2.</p>
+                            <center><span class="image main" style="width: 100%"><img src="images/visual.png"
+                                                                                      alt=""/></span></center>
+                        </div>
+                    </article>
+                    <article style="width: 100%">
+                        <div class="content">
+                            <p style="color: #3d4449; font-size: 20px">Subjective User Study is further performed to
+                                understand the capacity of the proposed YOGAv2. YOGAv2 and V-PCC exhibit a clear lead in
+                                visual presentation to other approaches. We conduct a subjective user study for
+                                perceptual quality assessment for these two methods.</p>
+                            <center><span class="image main" style="width: 100%"><img src="images/sub.png"
+                                                                                      alt=""/></span></center>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Section -->
+            <section id="Conclusion">
+                <header class="major">
+                    <h2>Conclusion</h2>
+                </header>
+                <div class="features">
+                    <article style="width: 100%">
+                        <div class="content">
+                            <p style="color: #3d4449; font-size: 20px">A layered point cloud compressor, termed YOGAv2,
+                                was proposed. YOGAv2 can effectively respond to the network bandwidth budget by properly
+                                assigning compressed bits for geometry and attribute components to minimize the overall
+                                distortion. To this end, YOGAv2 proposed a unified, two-layer compression backbone to
+                                encode geometry and color attributes under an end-to-end learning framework.
+
+                                On top of it, analytical rate and distortion models were developed to perform accurate
+                                rate control. The high efficiency , low complexity , and flexibility of the proposed
+                                YOGAv2 were justified through extensive experiments, making it attractive to
+                                practitioners.
+                                <br>
+                                <br>
+                                Our next focus is extending YOGAv2 to support other content types like LiDAR and dynamic
+                                point clouds.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+        <div class="inner">
+
+            <!-- Menu -->
+            <nav id="menu">
+                <header class="major">
+                    <h2>Menu</h2>
+                </header>
+                <ul>
+                    <li><a href="index.html">Title</a></li>
+                    <li><a href="#Abstract">Abstract</a></li>
+                    <li><a href="#Overview">Overview</a></li>
+                    <li><a href="#Compression Backbone">Compression Backbone</a></li>
+                    <li><a href="#Rate Control Strategy">Rate Control Strategy</a></li>
+                    <li><a href="#Rate Control Efficacy">Rate Control Efficacy</a></li>
+                    <li><a href="#Compression Performance">Compression Performance</a></li>
+                    <li><a href="#Qualitative Evaluation">Qualitative Evaluation</a></li>
+                    <li><a href="#Conclusion">Conclusion</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
