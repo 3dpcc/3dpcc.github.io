@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Editorial by HTML5 UP</title>
+    <title>YOGAv2: A Layered Point Cloud Compressor</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link rel="stylesheet" href="assets/css/main.css"/>
@@ -28,13 +28,14 @@
                     <td align="center" width="300px" style="padding: 0em 0em">
                         <center>
                     <span style="font-size:18px; color: #3d4449"><a href="https://github.com/arsx958"
-                                                    target="_blank">Junteng Zhang</a><sup>1</sup></span>
+                                                                    target="_blank">Junteng Zhang</a><sup>1</sup></span>
                         </center>
                     </td>
                     <td align="center" width="300px" style="padding: 0em 0em">
                         <center>
-                    <span style="font-size:18px; color: #3d4449"><a href="https://vision.nju.edu.cn/84/d8/c29470a492760/page.htm"
-                                                    target="_blank">Hao Chen</a><sup>2</sup></span>
+                    <span style="font-size:18px; color: #3d4449"><a
+                            href="https://vision.nju.edu.cn/84/d8/c29470a492760/page.htm"
+                            target="_blank">Hao Chen</a><sup>2</sup></span>
                         </center>
                     </td>
                     <td align="center" width="300px" style="padding: 0em 0em">
@@ -44,20 +45,23 @@
                     </td>
                     <td align="center" width="300px" style="padding: 0em 0em">
                         <center>
-                            <span style="font-size:18px; color: #3d4449"><a href="https://sites.google.com/site/jiangbolu/"
-                                                            target="_blank">Jiangbo Lu</a><sup>3</sup></span>
+                            <span style="font-size:18px; color: #3d4449"><a
+                                    href="https://sites.google.com/site/jiangbolu/"
+                                    target="_blank">Jiangbo Lu</a><sup>3</sup></span>
                         </center>
                     </td>
                     <td align="center" width="300px" style="padding: 0em 0em">
                         <center>
-                    <span style="font-size:18px; color: #3d4449"><a href="https://hise.hznu.edu.cn/c/2019-07-08/2192325.shtml"
-                                                    target="_blank">Dandan Ding</a><sup>1</sup></span>
+                    <span style="font-size:18px; color: #3d4449"><a
+                            href="https://hise.hznu.edu.cn/c/2019-07-08/2192325.shtml"
+                            target="_blank">Dandan Ding</a><sup>1</sup></span>
                         </center>
                     </td>
                     <td align="center" width="300px" style="padding: 0em 0em">
                         <center>
-                    <span style="font-size:18px; color: #3d4449"><a href="https://vision.nju.edu.cn/fc/d3/c29470a457939/page.htm"
-                                                    target="_blank">Zhan Ma</a><sup>2</sup></span>
+                    <span style="font-size:18px; color: #3d4449"><a
+                            href="https://vision.nju.edu.cn/fc/d3/c29470a457939/page.htm"
+                            target="_blank">Zhan Ma</a><sup>2</sup></span>
                         </center>
                     </td>
                 </tr>
@@ -94,12 +98,14 @@
                     </td>
                     <td align="center" width="225px" style="padding: 0em 0em">
                         <center>
-                            <span style="font-size:18px; color: #3d4449">Code <a href="https://github.com/3dpcc/YOGAv2" target="_blank"> [GitHub]</a></span>
+                            <span style="font-size:18px; color: #3d4449">Code <a href="https://github.com/3dpcc/YOGAv2"
+                                                                                 target="_blank"> [GitHub]</a></span>
                         </center>
                     </td>
                     <td align="center" width="225px" style="padding: 0em 0em">
                         <center>
-                            <span style="font-size:18px; color: #3d4449">Unpublished<a href="" target="_blank"> [Paper]</a></span>
+                            <span style="font-size:18px; color: #3d4449">Unpublished<a href=""
+                                                                                       target="_blank"> [Paper]</a></span>
 
                         </center>
                     </td>
@@ -122,15 +128,18 @@
                         <div class="content">
                             <p style="color: #3d4449; font-size: 20px">A layered point cloud compressor, YOGAv2, is
                                 proposed to efficiently encode colorful and relatively dense object point
-                                clouds vastly used in Augmented/Virtual Reality (AR/VR) applications. It is flexible,
+                                clouds vastly used in Augmented/Virtual Reality (AR/VR) applications. It is
+                                <b>flexible</b>,
                                 capable of compressing geometry
                                 and attribute information, separately and jointly, in pursuit of optimal quality under
                                 any given bitrate budget; it is
-                                high-efficiency, significantly outperforming the latest G-PCC standard quantitatively
-                                and qualitatively, e.g., more than
+                                <b>high-efficiency</b>, significantly outperforming the latest G-PCC standard
+                                quantitatively
+                                and qualitatively, <i>e.g.</i>, more than
                                 30% BD-BR gains using PCQM (Point Cloud Quality Metric) to assess superimposed geometry
                                 and attribute artifacts; and it
-                                is lightweight, e.g., presenting similar runtime as the G-PCC codec and just desiring a
+                                is <b>lightweight</b>, <i>e.g.</i>, presenting similar runtime as the G-PCC codec and
+                                just desiring a
                                 single neural model for encoding
                                 each component, which owes to parallel entropy coding and variable-rate support. T o
                                 this end, YOGAv2 develops a unified
@@ -165,7 +174,8 @@
                         <h3>Two-pass Rate Control </h3>
                         <p style="color: #3d4449">Two-pass rate control where pre-encoding is applied to determine
                             parameters of R-D models for
-                            deriving λG or λA under any given bandwidth budget RT in compression.</p>
+                            deriving λ<SUB>G</SUB> or λ<SUB>A</SUB> under any given bandwidth budget R<SUB>T</SUB> in
+                            compression.</p>
                     </article>
                     <article>
                         <a class="image" style="width: auto; max-width: 100%; max-height: 100%;"><img
@@ -174,17 +184,18 @@
                         <p style="color: #3d4449">A two-layer unified compression backbone used in respective geometry
                             and attribute coders.
                             The base layer uses G-PCC to encode the (downscaled) thumbnail point cloud. Upon the base
-                            layer reconstruction, the enhancement layer applies an end-toend V AE to embed local
+                            layer reconstruction, the enhancement layer applies an end-toend VAE to embed local
                             neighbors in a multiscale manner.</p>
                     </article>
                     <article>
                         <h3>Contribution</h3>
-                        <p style="color: #3d4449">High Flexibility. YOGAv2 is flexible, enabling the lossy compression
+                        <p style="color: #3d4449"><b>High Flexibility</b>. YOGAv2 is flexible, enabling the lossy
+                            compression
                             of geometry , attribute,
                             and their combination at any given bitrate and facilitating network-friendly scalable
                             streaming through a layered design. At the same, YOGAv2 offers backward compatibility to
                             enjoy well-engineered techniques in standard-compliant G-PCC.</p>
-                        <p style="color: #3d4449">High-Efficiency. YOGAv2 significantly improves the compression
+                        <p style="color: #3d4449"><b>High-Efficiency</b>. YOGAv2 significantly improves the compression
                             efficiency compared with G-PCC
                             and even outperforms V-PCC.
                             <br>
@@ -197,7 +208,8 @@
                             delivers superior qualitative quality compared to V-PCC, providing closer reconstruction to
                             the ground truth.
                         </p>
-                        <p style="color: #3d4449">Low Complexity. YOGAv2 presents a comparable runtime to the G-PCC,
+                        <p style="color: #3d4449"><b>Low Complexity</b>. YOGAv2 presents a comparable runtime to the
+                            G-PCC,
                             owing to the use of sparse
                             convolution and parallel entropy coding. And using the variable-rate model in YOGAv2 makes
                             it practically affordable concerning space complexity.</p>
@@ -228,7 +240,8 @@
                 <header class="major">
                     <h2>Rate Control Strategy</h2>
                 </header>
-                <p style="color: #3d4449; font-size: 20px">Given a total bandwidth budget R<SUB>T</SUB>, YOGAv2 adopts a content-aware
+                <p style="color: #3d4449; font-size: 20px">Given a total bandwidth budget R<SUB>T</SUB>, YOGAv2 adopts a
+                    content-aware
                     two-pass rate control to determine
                     the respective bitrate portion of geometry (R<SUB>G</SUB>) and attribute (R<SUB>A</SUB>) of a point
                     cloud for the
@@ -236,7 +249,7 @@
                     widely recognized PCQM metric is applied to assess the superimposed distortion from compressed
                     geometry and attribute information. At the same time, we formulate analytical rate and distortion
                     models for geometry and attribute components as functions of their corresponding controlling
-                    factors, i.e., λ<SUB>G</SUB> and λ<SUB>A</SUB>, and apply a pre-encoding step to perform the
+                    factors, <i>i.e.</i>, λ<SUB>G</SUB> and λ<SUB>A</SUB>, and apply a pre-encoding step to perform the
                     content-aware analysis for
                     determining model parameters, which enables accurate and effective rate control subsequently.</p>
                 <div class="posts">
@@ -265,6 +278,7 @@
                         <a class="image"><img src="images/loot_a_polynomial_00.png" alt=""/></a>
                     </article>
                     <br>
+                    <br>
                     <article style="width: 100%">
                         <div class="content">
                             <p style="color: #3d4449; font-size: 20px">Combining rate and distortion models developed in
@@ -287,6 +301,18 @@
                             <p style="color: #3d4449; font-size: 20px">We compare brute-force Full Search Mode
                                 and the proposed Analytical Prediction Mode to quantify the efficacy of rate
                                 control in YOGAv2:</p>
+                            <p style="color: #3d4449; font-size: 20px"><b>Full Search Mode</b>: 28 different
+                                λ<SUB>Gs</SUB> and λ<SUB>Gs</SUB>, e.g., λ<SUB>A</SUB> or λ<SUB>G</SUB> ∈ {64, 96, 128, ..., 2048} are used. As a result, it produces 784 = 28×28 pairs
+                                of λG and λG, covering fine-grained bitrate
+                                levels for a wide range in compression. We search the optimal (λ<SUB>G</SUB>, λ<SUB>A</SUB>) from 784 pairs to
+                                produce the best R-D performance under a bitrate budget.
+                            </p>
+                            <p style="color: #3d4449; font-size: 20px"><b>Analytical Prediction Mode</b>: λ<SUB>A</SUB> or λ<SUB>G</SUB> are both
+                                derived analytically using <b>Rate Control Strategy</b>. Note that the preencoding using several pairs of
+                                (λ<SUB>G</SUB>, λ<SUB>A</SUB>) is required.
+                            </p>
+
+
                             <center><span class="image main" style="width: 70%"><img src="images/Rate Contronl.png"
                                                                                      alt=""/></span></center>
                             <center><span class="image main" style="width: 70%"><img src="images/Rate Control RD.png"
