@@ -1,0 +1,304 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Efficient LiDAR Reflectance Compression via Scanning Serialization</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <!-- Banner -->
+                <section id="banner">
+                    <div class="content">
+                        <header>
+                            <center>
+                                <h1 style="font-size:50px">Efficient LiDAR Reflectance Compression via Scanning
+                                    Serialization</h1>
+                            </center>
+                        </header>
+                    </div>
+                </section>
+                <table align="center" width="1200px" style="margin: 0 0 1em 0">
+                    <tbody style="border: solid 0; background-color: #ffffff">
+                        <tr style="border: solid 0; background-color: #ffffff">
+                            <td align="center" width="300px" style="padding: 0em 0em">
+                                <center>
+                                    <span style="font-size:18px; color: #3d4449">Jiahao Zhu</a><sup>1</sup></span>
+                                </center>
+                            </td>
+                            <td align="center" width="300px" style="padding: 0em 0em">
+                                <center>
+                                    <span style="font-size:18px; color: #3d4449">Kang You<sup>2</sup></span>
+                                </center>
+                            </td>
+                            <td align="center" width="300px" style="padding: 0em 0em">
+                                <center>
+                                    <span style="font-size:18px; color: #3d4449"><a
+                                            href="https://hise.hznu.edu.cn/c/2019-07-08/2192325.shtml"
+                                            target="_blank">Dandan Ding</a><sup>1</sup></span>
+                                </center>
+                            </td>
+                            <td align="center" width="300px" style="padding: 0em 0em">
+                                <center>
+                                    <span style="font-size:18px; color: #3d4449"><a
+                                            href="https://vision.nju.edu.cn/fc/d3/c29470a457939/page.htm"
+                                            target="_blank">Zhan Ma</a><sup>2</sup></span>
+                                </center>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table align="center" width="800px" style="margin: 0 0 1em 0">
+                    <tbody style="border: solid 0; background-color: #ffffff">
+                        <tr style="border: solid 0; background-color: #ffffff">
+                            <td align="center" width="200px" style="padding: 0em 0em">
+                                <center>
+                                    <span style="font-size:18px; color: #3d4449"><sup>1</sup>Hangzhou Normal
+                                        University</span>
+                                </center>
+                            </td>
+                            <td align="center" width="150px" style="padding: 0em 0em">
+                                <center>
+                                    <span style="font-size:18px; color: #3d4449"><sup>2</sup>Nanjing University</span>
+                                </center>
+                            <td align="center" width="50px" style="padding: 0em 0em"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table align="center" width="1100px" style="margin: 0 0 1em 0">
+                    <tbody style="border: solid 0; background-color: #ffffff">
+                        <tr style="border: solid 0; background-color: #ffffff">
+                            <td align="center" width="275px" style="padding: 0em 0em">
+                                <center>
+                                    <span style="font-size:18px; color: #3d4449"></span>
+                                </center>
+                            </td>
+                            <td align="center" width="225px" style="padding: 0em 0em">
+                                <center>
+                                    <span style="font-size:18px; color: #3d4449">Code <a href="https://github.com/3dpcc/SerLic" target="_blank"> [GitHub]</a></span>
+                                </center>
+
+                            </td>
+                            <td align="center" width="225px" style="padding: 0em 0em">
+                                <center>
+                                    <span style="font-size:18px; color: #3d4449">Unpublished<a href="" target="_blank"> [Paper]</a></span>
+                                </center>
+                            </td>
+                            <td align="center" width="275px" style="padding: 0em 0em">
+                                <center>
+                                    <span style="font-size:18px; color: #3d4449"></span>
+                                </center>
+                            </td>
+                        </tr>
+                        <!--                </tbody>-->
+                </table>
+                <!-- Section -->
+                <section id="Abstract">
+                    <header class="major">
+                        <h2>Abstract</h2>
+                    </header>
+                    <div class="features">
+                        <article style="width: 100%">
+                            <div class="content">
+                                <p style="color: #3d4449; font-size: 20px">
+                                    Reflectance attributes in LiDAR point clouds provide essential information for
+                                    downstream tasks but remain underexplored in neural compression methods. To address this, we introduce SerLiC, a
+                                    serialization-based neural compression framework to fully exploit the intrinsic characteristics of LiDAR reflectance. SerLiC first
+                                    transforms 3D LiDAR point clouds into 1D sequences via scan-order serialization, offering a device-centric perspective for
+                                    reflectance analysis. Each point is then tokenized into a contextual representation comprising its sensor scanning
+                                    index, radial distance, and prior reflectance, for effective dependencies exploration. For efficient sequential
+                                    modeling, Mamba is incorporated with a dual parallelization scheme, enabling simultaneous autoregressive dependency capture
+                                    and fast processing. Extensive experiments demonstrate that SerLiC attains over 2× volume reduction against the
+                                    original reflectance data, outperforming the state-of-the-art method by up to 22% reduction of compressed bits
+                                    while using only 2% of its parameters. Moreover, a lightweight version of SerLiC achieves ≥ 10 fps (frames per
+                                    second) with just 111K parameters, which is attractive for real-world applications.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Section -->
+                <section id="Overview">
+                    <header class="major">
+                        <h2>Overview</h2>
+                    </header>
+                    <div class="posts">
+                        <article>
+                            <a class="image" style="width: auto; max-width: 100%; max-height: 100%;"><img
+                                    src="images/overview.jpg" alt="" /></a>
+                        </article>
+                        <article>
+                            <h3>Contribution</h3>
+                            <li style="color: #3d4449">
+                                We propose SerLiC, a lossless reflectance compression
+                                method for LiDAR point clouds, leveraging scan-order
+                                serialization to transform a 3D point cloud to 1D point
+                                sequences for efficient representation.
+                            </li>
+                            <li style="color: #3d4449">
+                                We generate LiDAR information (scanning index and
+                                radial distance) for each point, along with the previous
+                                decoded reflectance, as context to exploit point depen-
+                                dencies in a sequence, supported by the selective state
+                                space model with a dual parallelization mechanism.
+                            </li>
+                            <li style="color: #3d4449">
+                                SerLiC delivers notable performance on benchmark
+                                datasets, offering high compression efficiency, ultra-
+                                low complexity, and strong robustness. Its light version
+                                runs 30 fps with frame pipelining and 10 fps without,
+                                with only 111K model parameters.
+                            </li>
+                        </article>
+
+                    </div>
+                </section>
+
+                <!-- Section -->
+                <section id="Compression Backbone">
+                    <header class="major">
+                        <h2>Compression Backbone</h2>
+                    </header>
+                    <div class="features">
+                        <article style="width: 100%">
+                            <div class="content">
+                                <p style="color: #3d4449; font-size: 20px">
+                                    The input 3D LiDAR point cloud is first serialized into 1D ordered point sequences, which are then
+                                    divided into windows for parallel processing. For each window, a Mamba-driven autoregressive coding (MDAC) scheme is
+                                    employed, which embeds scanning index (<math>
+                                        <msubsup>
+                                            <mrow>
+                                                <mi mathvariant="bold">F</mi>
+                                            </mrow>
+                                            <mrow>
+                                                <mi>i</mi>
+                                            </mrow>
+                                            <mrow>
+                                                <mi>p</mi>
+                                                <mi>o</mi>
+                                                <mi>s</mi>
+                                            </mrow>
+                                        </msubsup>
+                                    </math>), radial distance (<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                        <msubsup>
+                                            <mrow>
+                                                <mi mathvariant="bold">F</mi>
+                                            </mrow>
+                                            <mrow>
+                                                <mi>i</mi>
+                                            </mrow>
+                                            <mrow>
+                                                <mi>&#x3C1;</mi>
+                                            </mrow>
+                                        </msubsup>
+                                    </math>), and prior reflectance (<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                        <msubsup>
+                                            <mrow>
+                                                <mi mathvariant="bold">F</mi>
+                                            </mrow>
+                                            <mrow>
+                                                <mi>i</mi>
+                                                <mo>&#x2212;</mo>
+                                                <mn>1</mn>
+                                            </mrow>
+                                            <mrow>
+                                                <mrow>
+                                                    <mi mathvariant="bold">x</mi>
+                                                </mrow>
+                                            </mrow>
+                                        </msubsup>
+                                    </math>) as context to
+                                    generate the probability mass function (PMF) for the reflectance intensity of the target (<math xmlns="http://www.w3.org/1998/Math/MathML">
+                                        <mi>i</mi>
+                                    </math>-th) point.
+                                </p>
+                                <span class="image main"><img src="images/framework.jpg" alt="" /></span>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Section -->
+                <section id="Compression Performance">
+                    <header class="major">
+                        <h2>Compression Performance</h2>
+                    </header>
+                    <div class="features">
+                        <article style="width: 100%">
+                            <div class="content">
+                                <p style="color: #3d4449; font-size: 20px">
+                                    We presents a detailed comparison of the overall bit rate
+                                    and CR gains of SerLiC against G-PCC (RAHT), G-PCC
+                                    (Predlift), and Unicorn.
+                                </p>
+                                <center><span class="image main" style="width: 100%"><img src="images/performance.jpg"
+                                            alt="" /></span></center>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Section -->
+                <section id="Conclusion">
+                    <header class="major">
+                        <h2>Conclusion</h2>
+                    </header>
+                    <div class="features">
+                        <article style="width: 100%">
+                            <div class="content">
+                                <p style="color: #3d4449; font-size: 20px">
+                                    This paper presents SerLiC, a serialization-based neural compression framework tailored for LiDAR reflectance attribute.
+                                    By leveraging scan-order serialization, SerLiC transforms 3D point clouds into 1D sequences, aligning with LiDAR
+                                    scanning mechanisms and enabling efficient sequential modeling. The Mamba model with physics-informed tokenization
+                                    further enhances its ability to capture points correlations autoregressively, while maintaining linear-time complexity.
+                                    Its high efficiency, ultra-low complexity, and strong robustness make it a practical solution for real LiDAR
+                                    applications. Future work will extend SerLiC to lossy compression for higher compression efficiency while preserving
+                                    essential information for downstream tasks.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+                <!-- Menu -->
+                <nav id="menu">
+                    <header class="major">
+                        <h2>Menu</h2>
+                    </header>
+                    <ul>
+                        <li><a href="index.html">Title</a></li>
+                        <li><a href="#Abstract">Abstract</a></li>
+                        <li><a href="#Overview">Overview</a></li>
+                        <li><a href="#Compression Backbone">Compression Backbone</a></li>
+                        <li><a href="#Compression Performance">Compression Performance</a></li>
+                        <li><a href="#Conclusion">Conclusion</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
